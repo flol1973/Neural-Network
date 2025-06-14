@@ -1,0 +1,4 @@
+To run the Stock Prediction App 
+Please clone the repo and dependencies the given dependices given below and on the terminal run "streamlit run app.py"
+
+tensorflow, matplotlib, numpy, streamlit, yfinance
