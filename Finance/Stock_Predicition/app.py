@@ -4,7 +4,7 @@ import yfinance as yf
 from keras.models import load_model
 import streamlit as st
 import matplotlib.pyplot as plt
-
+from sklearn.metrics import mean_squared_error, r2_score
 
 model = load_model("stock_price_prediction_model.keras")
 
@@ -88,5 +88,9 @@ plt.legend()
 plt.show()
 st.pyplot(fig4)
 
-
+st.subheader("Model Performance Metrics")
+rmse = np.sqrt(mean_squared_error(y, predict))
+r2 = r2_score(y, predict)
+st.write(f"Mean Squared Error: {rmse/np.mean(y):.2f}")
+st.write(f"R-squared: {r2:.2f}")
 
